@@ -1,0 +1,13 @@
+{
+	"name": "be-enhanced-ad-booking",
+	"version": "1.0.0",
+	"description": "Backend APIs for ad stream booking balancing",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Adina Shahira",
+	"license": "ISC",
+	"type": "module"
+}
