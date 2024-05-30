@@ -51,8 +51,7 @@ export class BookingBalancing {
 		});
 
 		let rebalancedBudgetPerStream = totalRemainingBudget / streams.length;
-		console.log('total remaining budget:', totalRemainingBudget);
-		console.log('rebalanced amount:', rebalancedBudgetPerStream);
+		console.log('Total Remaining Budget:', totalRemainingBudget);
 
 		// Case 1: Each Stream Usage Balance (%) is 0% or less
 		if (streams.every((stream) => parseFloat(stream.streamUsageBalance) <= 0)) {
@@ -69,6 +68,7 @@ export class BookingBalancing {
 		// Case 3: Any one or more but not all Usage Balance (%) is/are less than 5%
 		const streamsBelow5Pct = streams.filter((stream) => parseFloat(stream.streamUsageBalance) < 5);
 		console.log("An ad stream's budget has gone below 5%, rebalancing will commence");
+		console.log('Rebalanced Amount:', rebalancedBudgetPerStream);
 
 		if (streamsBelow5Pct.length > 0) {
 			streamsBelow5Pct.forEach((stream) => {
