@@ -11,6 +11,7 @@
 	"license": "ISC",
 	"type": "module",
 	"dependencies": {
+		"express": "^4.19.2",
 		"json-server": "^1.0.0-alpha.23"
 	},
 	"devDependencies": {
