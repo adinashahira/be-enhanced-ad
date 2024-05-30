@@ -27,6 +27,8 @@ export class BookingBalancing {
 		streams.forEach((stream) => {
 			let budget = stream.streamBudgetBalance;
 			let consumption = Math.floor(Math.random() * (budget + 1));
+			console.log(`consumption for ${stream.streamName}: ${consumption}`);
+
 			let newBalance = budget - consumption;
 
 			stream.streamBudget = budget;
@@ -34,6 +36,8 @@ export class BookingBalancing {
 			stream.streamBudgetBalance = newBalance;
 			stream.streamUsageBalance = `${((stream.streamBudgetBalance / budget) * 100).toFixed(2)}%`;
 		});
+
+		console.log('current budget per streams:', streams);
 
 		return streams;
 	};
@@ -44,7 +48,6 @@ export class BookingBalancing {
 
 		streams.forEach((stream) => {
 			totalRemainingBudget += stream.streamBudgetBalance;
-			console.log(`check parsed for ${stream.streamName}:`, parseFloat(stream.streamUsageBalance));
 		});
 
 		let rebalancedBudgetPerStream = totalRemainingBudget / streams.length;
